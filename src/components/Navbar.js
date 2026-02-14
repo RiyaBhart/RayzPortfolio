@@ -9,17 +9,11 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(offset > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
@@ -33,7 +27,8 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <a href="#">Rayz Creative</a>
+          {/* Changed from <a href="#"> to <a href="/"> for a valid link */}
+          <a href="/" className="logo-link">Rayz Creative</a>
         </div>
 
         <div className="navbar-links desktop">
@@ -44,7 +39,10 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="navbar-mobile-toggle" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <div
+          className="navbar-mobile-toggle"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
           <span className={`bar ${mobileMenuOpen ? 'open' : ''}`}></span>
           <span className={`bar ${mobileMenuOpen ? 'open' : ''}`}></span>
           <span className={`bar ${mobileMenuOpen ? 'open' : ''}`}></span>
