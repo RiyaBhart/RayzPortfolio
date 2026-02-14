@@ -1,13 +1,9 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion'; // removed unused useScroll, useTransform
 import './Testimonials.css';
 
 const Testimonials = () => {
   const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
 
   const testimonials = [
     {
@@ -58,18 +54,21 @@ const Testimonials = () => {
 
         {/* Right Side: Stacking Cards */}
         <div className="reviews-right">
-          {testimonials.map((review, index) => {
-            return <ReviewCard key={index} review={review} index={index} range={[index * 0.25, 1]} targetScale={1 - (testimonials.length - index) * 0.05} />
-          })}
+          {testimonials.map((review, index) => (
+            <ReviewCard
+              key={index}
+              review={review}
+              index={index}
+              targetScale={1 - (testimonials.length - index) * 0.05}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
-const ReviewCard = ({ review, index, range, targetScale }) => {
-  // We can use sticky positioning for the stacking effect without complex scroll logic,
-  // or use framer-motion for parallax. Sticky is cleaner for "stacking".
+const ReviewCard = ({ review, index, targetScale }) => {
   return (
     <div className="review-card-wrapper" style={{ top: `calc(10vh + ${index * 20}px)` }}>
       <motion.div
@@ -91,7 +90,7 @@ const ReviewCard = ({ review, index, range, targetScale }) => {
         </div>
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
 export default Testimonials;
