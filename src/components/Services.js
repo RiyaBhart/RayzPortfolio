@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react'; // removed ArrowRight
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Services.css';
