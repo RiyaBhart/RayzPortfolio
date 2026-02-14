@@ -1,0 +1,124 @@
+.services-section {
+  background-color: var(--secondary-color);
+  padding: 100px 0;
+  overflow: hidden;
+  position: relative;
+  /* Faded Background Effect */
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.carousel-wrapper {
+  padding: 0 40px;
+}
+
+.service-slide-padding {
+  padding: 15px;
+}
+
+.service-card {
+  /* Glassmorphism / Faded Card */
+  background: rgba(188, 114, 108, 0.05);
+  /* Very subtle accent tint */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 250px;
+  /* Reduced height since image is gone */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Center content vertically */
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: none;
+  position: relative;
+  cursor: grab;
+}
+
+.service-card:hover {
+  background: rgba(188, 114, 108, 0.15);
+  transform: translateY(-5px) scale(1.01);
+  border-color: rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+/* Removed image placeholder styles */
+
+.service-content {
+  padding: 30px;
+  text-align: center;
+  /* Center text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.service-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  /* Slightly larger title */
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.service-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0;
+}
+
+/* Removed learn-more-btn styles */
+
+/* Slick Customization */
+.slick-track {
+  display: flex;
+  align-items: stretch;
+}
+
+.slick-slide {
+  height: auto;
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+}
+
+.custom-arrow:hover {
+  background: #fff;
+  color: var(--primary-color);
+}
+
+.custom-arrow.prev {
+  left: -10px;
+}
+
+.custom-arrow.next {
+  right: -10px;
+}

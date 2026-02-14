@@ -1,0 +1,77 @@
+.pricing-lusion {
+  background-color: var(--dark-bg);
+  padding: 100px 20px;
+}
+
+.pricing-lusion-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pricing-intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.lusion-subtext {
+  font-family: var(--font-body);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pricing-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.pricing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.pricing-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-color);
+}
+
+.pricing-row h3 {
+  font-family: var(--font-heading);
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0;
+  flex: 1;
+}
+
+.pricing-row p {
+  color: rgba(255, 255, 255, 0.6);
+  flex: 1;
+}
+
+.pricing-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.pricing-row:hover .pricing-btn {
+  background: #fff;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .pricing-row {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}

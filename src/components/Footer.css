@@ -1,0 +1,106 @@
+.footer-lusion {
+  background-color: var(--dark-bg);
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  /* Context for absolute positioning if needed */
+}
+
+.footer-lusion-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.footer-lusion-logo {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  color: #fff;
+  opacity: 0.2;
+  margin: 0;
+}
+
+.footer-lusion-links {
+  display: flex;
+  gap: 40px;
+}
+
+.footer-lusion-links a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  transition: color 0.3s;
+}
+
+.footer-lusion-links a:hover {
+  color: #fff;
+}
+
+.footer-lusion-bottom {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  /* Copyright left/center, Info right? Or just Info bottom right */
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-contact-details {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-contact-details a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin: 0;
+  transition: color 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer-contact-details a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-lusion-bottom p {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 768px) {
+  .footer-lusion-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 40px;
+  }
+
+  .footer-contact-details {
+    order: 2;
+    /* Right side */
+  }
+
+  .footer-lusion-bottom>p {
+    order: 1;
+    /* Copyright Left/Center */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-lusion-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

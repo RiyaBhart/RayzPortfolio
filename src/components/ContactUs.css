@@ -1,0 +1,166 @@
+.contact-lusion {
+  background-color: var(--dark-bg);
+  padding: 100px 20px;
+}
+
+.contact-lusion-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lusion-form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.lusion-input-group input,
+.lusion-input-group textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 0;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.lusion-input-group input:focus,
+.lusion-input-group textarea:focus {
+  border-bottom-color: var(--accent-color);
+}
+
+.lusion-submit {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  transition: opacity 0.3s, color 0.3s;
+}
+
+.lusion-submit:hover {
+  opacity: 0.7;
+}
+
+.lusion-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.contact-lusion-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-lusion-info a {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-lusion-info a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Custom Select Styling to match Inputs */
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.lusion-select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px 0;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.lusion-select:focus {
+  border-bottom-color: var(--accent-color);
+  background: var(--dark-bg);
+}
+
+.lusion-select option {
+  background: var(--dark-bg);
+  color: #fff;
+  padding: 10px;
+}
+
+.custom-select-wrapper::after {
+  content: '▼';
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Status Messages */
+.form-status-msg {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.lusion-submit.success,
+.form-status-msg.success {
+  color: #4ade80;
+  border-color: #4ade80;
+}
+
+.lusion-submit.error,
+.form-status-msg.error {
+  color: #f87171;
+  border-color: #f87171;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form-note {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 10px;
+}

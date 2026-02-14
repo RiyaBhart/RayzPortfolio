@@ -1,0 +1,145 @@
+.about-horizontal {
+  height: 500vh;
+  /* Scaled for 5 panels */
+  position: relative;
+  background-color: var(--dark-bg);
+}
+
+.horizontal-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.horizontal-container {
+  display: flex;
+  gap: 0;
+  width: 500%;
+  /* 5 Panels */
+  height: 100%;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  /* Force Hardware Acceleration */
+}
+
+.h-panel {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  position: relative;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: translateZ(0);
+  /* Isolate layer */
+}
+
+.h-split-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.h-text-area {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  background: linear-gradient(90deg, var(--dark-bg) 60%, transparent);
+}
+
+.h-image-area {
+  flex: 1.5;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.h-image-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Removed expensive filters for smoothness */
+  opacity: 0.6;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.h-panel:hover .h-image-area img {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.h-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--dark-bg) 0%, transparent 50%);
+}
+
+.h-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 6rem);
+  color: #fff;
+  margin: 0 0 10px 0;
+  line-height: 1;
+}
+
+.h-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin: 0 0 20px 0;
+  letter-spacing: 1px;
+}
+
+.h-desc {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.h-number {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  font-family: monospace;
+  font-size: 1rem;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  padding: 5px 12px;
+  border-radius: 20px;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .h-split-content {
+    flex-direction: column;
+  }
+
+  .h-text-area {
+    height: 50%;
+    background: linear-gradient(180deg, var(--dark-bg) 80%, transparent);
+    padding: 30px;
+    order: 2;
+  }
+
+  .h-image-area {
+    height: 50%;
+    width: 100%;
+    order: 1;
+  }
+
+  .h-overlay {
+    background: linear-gradient(180deg, transparent 0%, var(--dark-bg) 100%);
+  }
+}

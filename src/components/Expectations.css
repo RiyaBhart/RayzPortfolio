@@ -1,0 +1,231 @@
+/* Keep existing styles, adding/updated modal specific ones */
+.expectations-section {
+    padding: 100px 20px;
+    background-color: var(--dark-bg);
+    min-height: 100vh;
+    position: relative;
+    z-index: 10;
+}
+
+.expectations-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.expectations-header h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.expectations-header p {
+    font-family: var(--font-body);
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.folders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.folder-card {
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.folder-tab {
+    width: 40%;
+    height: 30px;
+    background: var(--primary-color);
+    border-radius: 10px 10px 0 0;
+    margin-left: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
+}
+
+.folder-body {
+    background: rgba(110, 35, 38, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0 10px 10px 10px;
+    padding: 40px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.folder-card:hover .folder-body {
+    background: rgba(110, 35, 38, 0.6);
+    border-color: var(--accent-color);
+}
+
+.folder-body h3,
+.collage-header h2 {
+    font-family: var(--font-heading);
+    color: #fff;
+    margin: 0;
+}
+
+.folder-body h3 {
+    font-size: 1.8rem;
+}
+
+.folder-desc {
+    font-family: var(--font-body);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.folder-cta {
+    font-family: var(--font-body);
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Modal Wrapper for layoutId animation */
+.collage-modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    /* Let clicks pass to backdrop initially */
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    pointer-events: all;
+}
+
+.collage-modal {
+    position: fixed;
+    inset: 20px;
+    /* Leave a small gap to see it's overlaying */
+    background: var(--dark-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    pointer-events: all;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 102;
+    /* High z-index to be clickable */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #fff;
+    color: var(--dark-bg);
+    transform: rotate(90deg);
+}
+
+.collage-header {
+    padding: 30px;
+    z-index: 101;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.collage-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.collage-container {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    width: 120%;
+    /* Wider to cover rotates */
+    transform: rotate(-5deg) scale(1.1);
+    justify-content: center;
+    margin-left: -10%;
+    /* Center the wider container */
+    overflow: hidden;
+    /* Hide overflow */
+}
+
+.collage-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 30%;
+    min-width: 300px;
+}
+
+.collage-column img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Sliding Animations */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+.col-down {
+    animation: slideDown 15s linear infinite;
+    /* Increased Speed */
+}
+
+.col-up {
+    animation: slideUp 17s linear infinite;
+    /* Increased Speed */
+}

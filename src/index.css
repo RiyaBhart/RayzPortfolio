@@ -1,13 +1,58 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Strict Color Palette */
+  --primary-color: #6e2326;
+  --dark-bg: #5c171a;
+  --secondary-color: #965550;
+  --accent-color: #bc726c;
+
+  /* Typography */
+  --font-heading: 'Molenilo', 'Playfair Display', serif;
+  /* Fallback to Playfair if Molenilo not local */
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing & Layout */
+  --perspective: 1000px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--dark-bg);
+  color: #ffffff;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Global Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(90deg, #fff, var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

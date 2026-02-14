@@ -1,0 +1,150 @@
+.work-lusion {
+  background-color: var(--dark-bg);
+  padding: 100px 20px;
+}
+
+.work-lusion-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.work-lusion-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.work-lusion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.work-lusion-item:hover {
+  padding-left: 10px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
+}
+
+.work-lusion-info {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.work-num {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.work-name {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  line-height: 1;
+}
+
+.work-cat {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+}
+
+.work-arrow {
+  color: #fff;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.work-lusion-item:hover .work-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Modal Lusion */
+.modal-backdrop-lusion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content-lusion {
+  width: 100%;
+  max-width: 800px;
+  background: var(--dark-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.modal-close-lusion {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-header-lusion {
+  height: 200px;
+  padding: 40px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.modal-header-lusion h2 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: #fff;
+  margin: 0;
+}
+
+.modal-body-lusion {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.modal-row h4 {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.modal-row p {
+  color: #fff;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .work-lusion-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .work-name {
+    font-size: 1.8rem;
+  }
+
+  .modal-body-lusion {
+    grid-template-columns: 1fr;
+  }
+}
